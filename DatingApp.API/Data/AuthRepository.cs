@@ -27,6 +27,8 @@ namespace DatingApp.API.Data
 
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
+
+            return user;
         }
 
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
