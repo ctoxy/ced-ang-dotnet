@@ -1,0 +1,13 @@
+dotnet new webapi -n DatingApp.API
+
+extension
+migration orm base entity
+dotnet tool install --global dotnet-ef
+verifier apres reload ap dotnet ef -h si ok 
+
+installer via nuget : Microsoft.EntityFrameworkCore.Design
+initialisation: 
+dotnet ef migrations add InitialCreate
+si ok creation du dossier migrations
+mise ajour de la base a faire ensuite  afaire pour creer le fichier datingapp.db a ouvrir avec sqlite
+dotnet ef database update
