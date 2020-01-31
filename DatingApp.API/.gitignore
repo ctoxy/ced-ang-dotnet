@@ -42,9 +42,8 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
-datingapp.db
-datingapp.db-shm
-datingapp.db-wal
+*.db
+
 
 # System Files
 .DS_Store
