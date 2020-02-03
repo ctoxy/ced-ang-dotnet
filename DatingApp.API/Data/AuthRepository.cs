@@ -19,21 +19,21 @@ namespace DatingApp.API.Data
 
             if (user == null)
                 return null;
-            if (!VerifyPasswordHash(password, user.PasswordSalt, user.PasswordHash))
+            if (!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
                 return null;
             
             return user;
            
         }
 
-        private bool VerifyPasswordHash(string password, byte[] passwordSalt, byte[] passwordHash)
+        private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
         {
             using(var hmac = new System.Security.Cryptography.HMACSHA512(passwordSalt))
             {
                 var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
                 for (int i = 0; i < computedHash.Length; i++)
                 {
-                    if (computedHash[i] != password[i])
+                    if (computedHash[i] != passwordHash[i])
                     return false;
                 }
             }
