@@ -10,6 +10,8 @@
 # dependencies
 /node_modules
 /obj
+# protected file
+appsettings.json
 
 
 # profiling files
