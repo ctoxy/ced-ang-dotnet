@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { AuthService } from 'src/app/_services/auth.service';
 
 
@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/_services/auth.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  @Input() valuesFromHome: any;
+
   @Output() cancelRegister = new EventEmitter();
   model: any = {};
 
