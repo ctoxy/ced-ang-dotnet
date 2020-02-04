@@ -11,7 +11,7 @@
 /node_modules
 /obj
 # protected file
-appsettings.json
+#appsettings.json
 
 
 # profiling files
