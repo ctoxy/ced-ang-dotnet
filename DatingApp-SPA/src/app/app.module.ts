@@ -8,11 +8,14 @@ import { NavComponent } from './components/nav/nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from './_services/auth.service';
+
 @NgModule({
   declarations: [
     AppComponent,
     ValueComponent,
-    NavComponent
+    NavComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,7 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
