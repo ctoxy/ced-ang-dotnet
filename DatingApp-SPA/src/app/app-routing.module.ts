@@ -4,11 +4,12 @@ import { HomeComponent } from './components/home/home.component';
 import { MemberListComponent } from './components/member-list/member-list.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { ListsComponent } from './components/lists/lists.component';
+import { AuthGuard } from './_guards/auth.guard';
 
 
 const routes: Routes = [
-  {path: 'home/:id', component: HomeComponent},
-  {path: 'members', component: MemberListComponent},
+  {path: 'home', component: HomeComponent},
+  {path: 'members', component: MemberListComponent, canActivate: [AuthGuard]},
   {path: 'messages', component: MessagesComponent},
   {path: 'lists', component: ListsComponent},
   {path: '**', redirectTo: 'home', pathMatch: 'full'},
