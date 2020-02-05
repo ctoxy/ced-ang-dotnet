@@ -7,7 +7,7 @@ import { ListsComponent } from './components/lists/lists.component';
 
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
+  {path: 'home/:id', component: HomeComponent},
   {path: 'members', component: MemberListComponent},
   {path: 'messages', component: MessagesComponent},
   {path: 'lists', component: ListsComponent},
