@@ -24,6 +24,7 @@
     "@auth0/angular-jwt": "^3.0.1",
     "alertifyjs": "^1.13.1",
     "bootstrap": "^4.4.1",
+    "bootswatch": "^4.4.1",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
     "jquery": "^3.4.1",
