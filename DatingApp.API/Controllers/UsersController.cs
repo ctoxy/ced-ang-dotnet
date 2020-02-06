@@ -23,7 +23,7 @@ namespace DatingApp.API.Controllers
         }
 
         // GET api/users
-        [AllowAnonymous]
+        
         [HttpGet]
         public async Task<IActionResult> GetUsers()
         {
@@ -33,7 +33,7 @@ namespace DatingApp.API.Controllers
         }
 
         // GET api/users/2
-        [AllowAnonymous]
+        
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUser(int id)
         {
