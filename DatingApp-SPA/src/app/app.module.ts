@@ -21,6 +21,7 @@ import { MemberListComponent } from './components/members/member-list/member-lis
 import { ListsComponent } from './components/lists/lists.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { MemberCardComponent } from './components/members/member-card/member-card.component';
+import { MemberDetailComponent } from './components/members/member-detail/member-detail.component';
 
 
 /* evite lors de la connexion que le token soit null pour la requete vers le serveru */
@@ -39,6 +40,7 @@ export function tokenGetter() {
     ListsComponent,
     MessagesComponent,
     MemberCardComponent,
+    MemberDetailComponent,
 
   ],
   imports: [
