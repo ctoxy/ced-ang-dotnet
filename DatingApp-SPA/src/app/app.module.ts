@@ -30,6 +30,7 @@ import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
 import { MemberEditComponent } from './components/members/member-edit/member-edit.component';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
+import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 
 
 /* evite lors de la connexion que le token soit null pour la requete vers le serveru */
@@ -80,6 +81,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
   ],
   providers: [
     AuthService,
+    PreventUnsavedChanges,
     ErrorInterceptorProvider,
     AlertifyService,
     AuthGuard,
