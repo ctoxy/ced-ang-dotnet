@@ -22,11 +22,16 @@ import { ListsComponent } from './components/lists/lists.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { MemberCardComponent } from './components/members/member-card/member-card.component';
 import { MemberDetailComponent } from './components/members/member-detail/member-detail.component';
+import { AlertifyService } from './_services/alertify.service';
+import { AuthGuard } from './_guards/auth.guard';
+import { UserService } from './_services/user.service';
+import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
+import { MemberListResolver } from './_resolvers/member-list.resolver';
 
 
 /* evite lors de la connexion que le token soit null pour la requete vers le serveru */
 export function tokenGetter() {
-  return localStorage.getItem('token')
+  return localStorage.getItem('token');
 }
 
 @NgModule({
@@ -54,13 +59,22 @@ export function tokenGetter() {
     TabsModule.forRoot(),
     JwtModule.forRoot({
       config: {
+        // tslint:disable-next-line: object-literal-shorthand
         tokenGetter: tokenGetter,
         whitelistedDomains: ['localhost:5000'],
         blacklistedRoutes: ['localhost:5000/api/auth']
       }
     })
   ],
-  providers: [AuthService, ErrorInterceptorProvider],
+  providers: [
+    AuthService,
+    ErrorInterceptorProvider,
+    AlertifyService,
+    AuthGuard,
+    UserService,
+    MemberDetailResolver,
+    MemberListResolver,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
