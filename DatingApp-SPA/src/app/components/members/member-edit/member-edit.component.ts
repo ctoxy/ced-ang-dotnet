@@ -32,15 +32,19 @@ export class MemberEditComponent implements OnInit {
     // this.authService.currentPhotoUrl.subscribe(photoUrl => this.photoUrl = photoUrl);
   }
 
-  /*updateUser() {
-    this.userService.updateUser(this.authService.decodedToken.nameid, this.user).subscribe(next => {
+  updateUser() {
+    /*this.userService.updateUser(this.authService.decodedToken.nameid, this.user).subscribe(next => {
       this.alertify.success('Profile updated successfully');
       this.editForm.reset(this.user);
     }, error => {
       this.alertify.error(error);
-    });
+    });*/
+    console.log(this.user);
+
+    this.alertify.success('Profile updated successfully');
+    this.editForm.reset(this.user);
   }
-*/
+
   updateMainPhoto(photoUrl) {
     this.user.photoUrl = photoUrl;
   }
