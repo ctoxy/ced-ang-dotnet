@@ -1,5 +1,9 @@
 import { BrowserModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+import { TimeAgoPipe } from 'time-ago-pipe';
+
 import { HttpClientModule } from '@angular/common/http';
 import { BsDropdownModule, TabsModule, BsDatepickerModule } from 'ngx-bootstrap';
 import { NgxGalleryModule } from 'ngx-gallery';
@@ -34,7 +38,7 @@ import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './components/members/photo-editor/photo-editor.component';
 
-
+registerLocaleData(localeFr);
 
 /* evite lors de la connexion que le token soit null pour la requete vers le serveru */
 export function tokenGetter() {
@@ -62,6 +66,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     MemberDetailComponent,
     MemberEditComponent,
     PhotoEditorComponent,
+    TimeAgoPipe,
 
   ],
   imports: [
@@ -97,7 +102,8 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     MemberDetailResolver,
     MemberListResolver,
     MemberEditResolver,
-    { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
+    { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig },
+    {provide: LOCALE_ID, useValue: 'fr-FR' }
   ],
   bootstrap: [AppComponent]
 })
