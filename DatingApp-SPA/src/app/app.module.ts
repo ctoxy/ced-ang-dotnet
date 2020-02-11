@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { FileUploadModule } from 'ng2-file-upload';
 import { AppRoutingModule } from './app-routing.module';
 import { JwtModule } from '@auth0/angular-jwt';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,6 +33,7 @@ import { MemberEditComponent } from './components/members/member-edit/member-edi
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './components/members/photo-editor/photo-editor.component';
+
 
 
 /* evite lors de la connexion que le token soit null pour la requete vers le serveru */
@@ -70,8 +72,10 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     BrowserAnimationsModule,
     MaterialModule,
     BsDropdownModule.forRoot(),
-    TabsModule.forRoot(),
     NgxGalleryModule,
+    TabsModule.forRoot(),
+
+    FileUploadModule,
     JwtModule.forRoot({
       config: {
         // tslint:disable-next-line: object-literal-shorthand
