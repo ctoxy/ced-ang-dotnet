@@ -3,7 +3,8 @@ import { User } from '../../../_models/user';
 import { UserService } from '../../../_services/user.service';
 import { AlertifyService } from '../../../_services/alertify.service';
 import { ActivatedRoute } from '@angular/router';
-import { Pagination, PaginatedResult } from '../../../_models/pagination';
+import { Pagination, PaginatedResult } from 'src/app/_models/pagination';
+
 
 @Component({
   selector: 'app-member-list',
@@ -29,6 +30,11 @@ export class MemberListComponent implements OnInit {
       this.users = data['users'].result;
       this.pagination = data['users'].pagination;
     });
+
+    this.userParams.gender = this.user.gender === 'female' ? 'male' : 'female';
+    this.userParams.minAge = 18;
+    this.userParams.maxAge = 99;
+
   }
 
   pageChanged(event: any): void {
@@ -38,7 +44,7 @@ export class MemberListComponent implements OnInit {
 
   loadUsers() {
     this.userService
-      .getUsers(this.pagination.currentPage, this.pagination.itemsPerPage)
+      .getUsers(this.pagination.currentPage, this.pagination.itemsPerPage, this.userParams)
       .subscribe((res: PaginatedResult<User[]>) => {
         this.users = res.result;
         this.pagination = res.pagination;
@@ -46,6 +52,13 @@ export class MemberListComponent implements OnInit {
           this.alertify.error(error);
         });
   }
+  resetFilters() {
+    this.userParams.gender = this.user.gender === 'female' ? 'male' : 'female';
+    this.userParams.minAge = 18;
+    this.userParams.maxAge = 99;
+    this.loadUsers();
+  }
+
 
 
 
