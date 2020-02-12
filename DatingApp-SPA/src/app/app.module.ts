@@ -5,7 +5,7 @@ import localeFr from '@angular/common/locales/fr';
 import { TimeAgoPipe } from 'time-ago-pipe';
 
 import { HttpClientModule } from '@angular/common/http';
-import { BsDropdownModule, TabsModule, BsDatepickerModule, PaginationModule } from 'ngx-bootstrap';
+import { BsDropdownModule, TabsModule, BsDatepickerModule, PaginationModule, ButtonsModule } from 'ngx-bootstrap';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { FileUploadModule } from 'ng2-file-upload';
 import { AppRoutingModule } from './app-routing.module';
@@ -79,6 +79,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     BsDatepickerModule.forRoot(),
     BsDropdownModule.forRoot(),
     PaginationModule.forRoot(),
+    ButtonsModule.forRoot(),
     NgxGalleryModule,
     TabsModule.forRoot(),
 
