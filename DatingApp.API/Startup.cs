@@ -87,10 +87,14 @@ namespace DatingApp.API
             /* middleware de authorisation via token avant useauthorisation */ 
             app.UseAuthentication();
             app.UseAuthorization();
+            /*pour savoir ou est index.html*/
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapFallbackToController("Index", "Fallback");
             });
         }
     }
