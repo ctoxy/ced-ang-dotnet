@@ -39,7 +39,7 @@ export class MessagesComponent implements OnInit {
         this.alertify.error(error);
       });
   }
-/*
+
   deleteMessage(id: number) {
     this.alertify.confirm('Are you sure you want to delete this message?', () => {
       this.userService.deleteMessage(id, this.authService.decodedToken.nameid).subscribe(() => {
@@ -49,7 +49,7 @@ export class MessagesComponent implements OnInit {
         this.alertify.error('Failed to delete the message');
       });
     });
-  }*/
+  }
 
   pageChanged(event: any): void {
     this.pagination.currentPage = event.page;

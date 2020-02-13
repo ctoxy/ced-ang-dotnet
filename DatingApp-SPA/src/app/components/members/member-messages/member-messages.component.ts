@@ -43,6 +43,8 @@ export class MemberMessagesComponent implements OnInit {
     });
   }
 
+
+
   sendMessage() {
     this.newMessage.recipientId = this.recipientId;
     this.userService.sendMessage(this.authService.decodedToken.nameid, this.newMessage)
