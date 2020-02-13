@@ -19,3 +19,21 @@ dotnet ef migrations remove juste apres un add si erreur avant l update
 dotnet ef migrations add nomdelamigrations
 dotnet ef migrations -h help
 dotnet ef migrations list voir tout les liste de migrations
+
+*/installation de sql /*
+se connecter via root definit lors de l installion
+mysql -u root -p 
+show databases;
+
+CREATE USER 'appuser'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'appuser'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+test de connextion via 
+mysql -u appuser -p
+
+/* database provider avec entity */
+ https://docs.microsoft.com/fr-fr/ef/core/providers/?tabs=dotnet-core-cli
+
+ /* on microsoftsql */
+        /* "DefaultConnection": "Server=localhost; Database=datingapp; User Id=appuser; Password=password"*/
