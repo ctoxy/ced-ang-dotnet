@@ -25,6 +25,7 @@ import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { ListsResolver } from './_resolvers/lists.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
+import { MessagesResolver } from './_resolvers/messages.resolver';
 
 import { AppComponent } from './app.component';
 import { MemberListComponent } from './components/members/member-list/member-list.component';
@@ -105,6 +106,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     MemberListResolver,
     MemberEditResolver,
     ListsResolver,
+    MessagesResolver,
     { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig },
     {provide: LOCALE_ID, useValue: 'fr-FR' }
   ],
