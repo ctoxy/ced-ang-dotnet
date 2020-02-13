@@ -38,6 +38,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { MemberEditComponent } from './components/members/member-edit/member-edit.component';
 import { PhotoEditorComponent } from './components/members/photo-editor/photo-editor.component';
+import { MemberMessagesComponent } from './components/members/member-messages/member-messages.component';
 
 
 registerLocaleData(localeFr);
@@ -68,6 +69,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     MemberEditComponent,
     PhotoEditorComponent,
     TimeAgoPipe,
+    MemberMessagesComponent,
 
   ],
   imports: [
