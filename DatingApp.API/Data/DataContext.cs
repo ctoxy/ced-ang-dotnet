@@ -10,8 +10,11 @@ namespace DatingApp.API.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Photo> Photos { get; set; }
         public DbSet<Like> Likes { get; set; }
+        public DbSet<Message> Messages { get; set; }
         /*info pour entity lors de la creation de la relation user users many to many
-        k.LikerId, k.LikeeId pour evieter d'aimer plusieurs fois on concatene les deux clé primaire*/
+        k.LikerId, k.LikeeId pour evieter d'aimer plusieurs fois on concatene les deux clé primaire
+        info pour entity lors de la creation de la relation user et message many to many
+        k.MessageSent, k.MessageReceived pour evieter d'aimer plusieurs fois on concatene les deux clé primaire*/
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Like>()
@@ -27,6 +30,20 @@ namespace DatingApp.API.Data
                 .WithMany(u => u.Likees)
                 .HasForeignKey(u => u.LikerId)
                 .OnDelete(DeleteBehavior.Restrict);
+            /* one user can sent to other messages */
+            builder.Entity<Message>()
+                .HasOne(u => u.Sender)
+                .WithMany(u => u.MessagesSent)
+                .OnDelete(DeleteBehavior.Restrict);
+            /* one user can receive to other messages */
+            builder.Entity<Message>()
+                .HasOne(u => u.Recipient)
+                .WithMany(u => u.MessagesReceived)
+                .OnDelete(DeleteBehavior.Restrict);
         }
+
+        /*info pour entity lors de la creation de la relation user et message many to many
+        k.MessageSent, k.MessageReceived pour evieter d'aimer plusieurs fois on concatene les deux clé primaire*/
+        
     }
 }
