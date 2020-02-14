@@ -40,3 +40,8 @@ mysql -u appuser -p
 
 set ASPNETCORE_ENVIRONMENT=Production en nouvelle utilisation mysql
 dotnet ef migrations add MySqlInitial
+
+
+si tout est ok 
+
+dotnet publish --configuration Release

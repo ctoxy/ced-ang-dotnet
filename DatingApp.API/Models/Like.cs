@@ -7,8 +7,8 @@ namespace DatingApp.API.Models
         /* id d'un user qui est aimer par un/plusieurs autres  user */
         public int LikeeId { get; set; }
         /* un user qui aime par un autre user */
-        public virtual User Liker { get; set; }
+        public  User Liker { get; set; }
         /* un user aqui est aimer par un/plusieurs autres  user */
-        public virtual User Likee { get; set; }
+        public  User Likee { get; set; }
     }
 }
