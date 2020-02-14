@@ -37,3 +37,6 @@ mysql -u appuser -p
 
  /* on microsoftsql */
         /* "DefaultConnection": "Server=localhost; Database=datingapp; User Id=appuser; Password=password"*/
+
+set ASPNETCORE_ENVIRONMENT=Production en nouvelle utilisation mysql
+dotnet ef migrations add MySqlInitial
