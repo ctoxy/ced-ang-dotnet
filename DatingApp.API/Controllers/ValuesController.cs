@@ -23,7 +23,7 @@ namespace DatingApp.API.Controllers
 
         }
         // GET api/values recupéres les valeurs de la db
-        
+        [Authorize(Roles= "Admin")]
         [HttpGet]
         public async Task<IActionResult>  GetValues()
         {
@@ -31,7 +31,7 @@ namespace DatingApp.API.Controllers
             return Ok(values);
         }
         // GET api/values/5
-        
+        [Authorize(Roles= "Member")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetValue(int id)
         {
