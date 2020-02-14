@@ -77,13 +77,13 @@ namespace DatingApp.API
                         ValidateAudience = false
                     };
                 });
-            
-            /*services.AddAuthorization(options =>
+            /*set policy for authorize route for each role admin member moderator*/
+            services.AddAuthorization(options =>
             {
                 options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("Admin"));
                 options.AddPolicy("ModeratePhotoRole", policy => policy.RequireRole("Admin", "Moderator"));
                 options.AddPolicy("VipOnly", policy => policy.RequireRole("VIP"));
-            });*/
+            });
             // utilisation de la base de appsettings json selon la configuration dev or pro */
             services.AddDbContext<DataContext>( x => x.UseSqlite
             (Configuration.GetConnectionString("DefaultConnection")));
