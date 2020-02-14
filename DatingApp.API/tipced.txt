@@ -19,3 +19,10 @@ dotnet ef migrations remove juste apres un add si erreur avant l update
 dotnet ef migrations add nomdelamigrations
 dotnet ef migrations -h help
 dotnet ef migrations list voir tout les liste de migrations
+
+penser a 
+.Annotation("SqlServer:ValueGenerationStrategy",
+SqlServerValueGenerationStrategy.IdentityColumn)
+.Annotation("MySql:ValueGenerationStrategy",
+MySqlValueGenerationStrategy.IdentityColumn)
+.Annotation("Sqlite:Autoincrement", true),
