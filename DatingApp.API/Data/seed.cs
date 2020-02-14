@@ -18,9 +18,9 @@ namespace DatingApp.API.Data
                     byte[] passwordhash, passwordSalt;
                     CreatePasswordHash("password", out passwordhash, out passwordSalt);
 
-                    user.PasswordHash = passwordhash;
-                    user.PasswordSalt = passwordSalt;
-                    user.Username = user.Username.ToLower();
+                    /*user.PasswordHash = passwordhash;
+                    user.PasswordSalt = passwordSalt;*/
+                    user.UserName = user.UserName.ToLower();
                     context.Users.Add(user);
                 }
 
