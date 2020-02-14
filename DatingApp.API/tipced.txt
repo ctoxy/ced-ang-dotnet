@@ -45,3 +45,5 @@ dotnet ef migrations add MySqlInitial
 si tout est ok 
 
 dotnet publish --configuration Release
+
+penser ar fileexcule in settings json de vscode pour voir le resultat
