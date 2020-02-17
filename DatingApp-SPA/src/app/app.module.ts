@@ -5,7 +5,7 @@ import localeFr from '@angular/common/locales/fr';
 import { TimeAgoPipe } from 'time-ago-pipe';
 
 import { HttpClientModule } from '@angular/common/http';
-import { BsDropdownModule, TabsModule, BsDatepickerModule, PaginationModule, ButtonsModule } from 'ngx-bootstrap';
+import { BsDropdownModule, TabsModule, BsDatepickerModule, PaginationModule, ButtonsModule, ModalModule } from 'ngx-bootstrap';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { FileUploadModule } from 'ng2-file-upload';
 import { AppRoutingModule } from './app-routing.module';
@@ -47,6 +47,9 @@ import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { PhotoManagementComponent } from './admin/photo-management/photo-management.component';
 import { UserManagementComponent } from './admin/user-management/user-management.component';
 
+/*entrie comp*/
+import { RolesModalComponent } from './admin/roles-modal/roles-modal.component';
+
 
 
 
@@ -83,6 +86,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     HasRoleDirective,
     PhotoManagementComponent,
     UserManagementComponent,
+    RolesModalComponent,
 
   ],
   imports: [
@@ -97,6 +101,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     BsDropdownModule.forRoot(),
     PaginationModule.forRoot(),
     ButtonsModule.forRoot(),
+    ModalModule.forRoot(),
     NgxGalleryModule,
     TabsModule.forRoot(),
 
@@ -125,6 +130,9 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     MessagesResolver,
     { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig },
     {provide: LOCALE_ID, useValue: 'fr-FR' }
+  ],
+  entryComponents: [
+    RolesModalComponent
   ],
   bootstrap: [AppComponent]
 })
