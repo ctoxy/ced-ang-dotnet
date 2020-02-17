@@ -18,6 +18,9 @@ import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { AuthService } from './_services/auth.service';
 import { AlertifyService } from './_services/alertify.service';
 import { AuthGuard } from './_guards/auth.guard';
+/*directive */
+import { HasRoleDirective } from './_directives/hasRole.directive';
+
 import { UserService } from './_services/user.service';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 
@@ -40,6 +43,7 @@ import { MemberEditComponent } from './components/members/member-edit/member-edi
 import { PhotoEditorComponent } from './components/members/photo-editor/photo-editor.component';
 import { MemberMessagesComponent } from './components/members/member-messages/member-messages.component';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
+
 
 
 registerLocaleData(localeFr);
@@ -72,6 +76,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     TimeAgoPipe,
     MemberMessagesComponent,
     AdminPanelComponent,
+    HasRoleDirective,
 
   ],
   imports: [
