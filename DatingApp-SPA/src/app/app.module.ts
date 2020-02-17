@@ -22,6 +22,7 @@ import { AuthGuard } from './_guards/auth.guard';
 import { HasRoleDirective } from './_directives/hasRole.directive';
 
 import { UserService } from './_services/user.service';
+import { AdminService } from './_services/admin.service';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
@@ -43,6 +44,9 @@ import { MemberEditComponent } from './components/members/member-edit/member-edi
 import { PhotoEditorComponent } from './components/members/photo-editor/photo-editor.component';
 import { MemberMessagesComponent } from './components/members/member-messages/member-messages.component';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
+import { PhotoManagementComponent } from './admin/photo-management/photo-management.component';
+import { UserManagementComponent } from './admin/user-management/user-management.component';
+
 
 
 
@@ -77,6 +81,8 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     MemberMessagesComponent,
     AdminPanelComponent,
     HasRoleDirective,
+    PhotoManagementComponent,
+    UserManagementComponent,
 
   ],
   imports: [
@@ -111,6 +117,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     AlertifyService,
     AuthGuard,
     UserService,
+    AdminService,
     MemberDetailResolver,
     MemberListResolver,
     MemberEditResolver,
